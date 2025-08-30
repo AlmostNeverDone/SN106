@@ -28,19 +28,20 @@ This project explores Cross-Site Scripting (XSS) vulnerabilities using DVWA and 
 * Damn Vulnerable Web Application [易受攻擊的 Web 應用程式 (DVWA)]</b>
 * Custom Flask server (本地運行的自製 Flask 伺服器)</b>
 
-<b>*Safety note (安全提醒): 
-<br/>DVWA is intentionally vulnerable; do not deploy on internet-facing hosts. <br/>(DVWA 為刻意脆弱之系統，請勿對外公開部署。)</b>
+[Safety note]
+* DVWA is intentionally vulnerable; do not deploy on internet-facing hosts.<br/>
+  DVWA 為刻意脆弱之系統，請勿對外公開部署</b>
 
 [Tasks]
-* Baseline Test(基線測試)</b>
-* Manipulated Input for Multiple Records(輸入操控取得多筆紀錄)</b>
-* Extract Database Version(讀取資料庫版本)</b>
-* Extract Database User(讀取資料庫使用者)</b>
-* Identify Active Database(確認當前資料庫)</b>
-* Enumerate Table Names(枚舉表格名稱)</b>
-* Filter User-Related Tables(過濾使用者相關表格)</b>
-* Enumerate Columns(枚舉欄位)</b>
-* Data Exposure Demonstration(資料洩漏示範)</b>
+* Inject JavaScript Alert (注入 JavaScript 警告彈窗)</b>
+* HTML Tag Injection (注入 HTML 標籤)</b>
+* Display Session Cookie (顯示 Session Cookie)</b>
+* Reflected XSS with Cookie Script (反射型 XSS 顯示 Cookie)</b>
+* Reflected XSS Simple Alert (反射型 XSS 簡單彈窗)</b>
+* Inject Clickable Link (注入可點擊的惡意連結)</b>
+* Redirect Victim to External Site (重導向至外部網站)</b>
+* Start Flask Server (啟動 Flask 伺服器)</b>
+* Perform Persistent XSS (執行持續型 XSS)</b>
 
 
 <h2>Practice 實踐</h2>
@@ -99,6 +100,13 @@ Task 9: Data Exposure Demonstration<br/>(資料洩漏示範) <br/>
 <br />
 * Confirms real-world risk of SQL Injection. (證實 SQLi 對敏感資料的實際危害)</b>
 <br/>
+
+<h2>Stored XSS vs Persistent XSS (儲存型與持續型 XSS 差異)</h2>
+
+| 類型 <br/>(Type)                      | 定義 <br/>(Definition)                                                                  | 觸發方式 <br/>(Trigger)                                                            | 影響範圍 <br/>(Impact Scope)                                                                                                    | 課程範例 <br/>(Course Example)        |
+| ------------------------ | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| **Stored XSS <br/>(儲存型)**     | Malicious script is saved into the server database or file <br/>(惡意程式碼被存入伺服器的資料庫或檔案中) | Executed whenever stored content is retrieved <br/>(每次讀取該內容時觸發)                | Limited to the specific page or module where the payload is displayed <br/>(通常只影響顯示該輸入內容的特定頁面或功能模組)                         | DVWA – *XSS (stored)*        |
+| **Persistent XSS <br/>(持續型)** | A special case of Stored XSS that emphasizes long-term effect <br/>(儲存型的特例，強調長期持續影響)  | Script executes automatically on every subsequent visit<br/>(每次後續造訪頁面時都會自動執行) | May affect multiple pages or even the whole site if injected into shared components <br/>(若注入共用區塊，例如首頁公告或模板，可能影響多個頁面甚至整個網站) | Flask Server – `a2server.py` |
 
 
 <h2>Results 成果展示</h2>
