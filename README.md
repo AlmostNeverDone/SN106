@@ -28,8 +28,8 @@ This project explores Cross-Site Scripting (XSS) vulnerabilities using DVWA and 
 * Damn Vulnerable Web Application [易受攻擊的 Web 應用程式 (DVWA)]</b>
 * Custom Flask server (本地運行的自製 Flask 伺服器)</b>
 
-*Safety note: DVWA is intentionally vulnerable; do not deploy on internet-facing hosts.
-<br/>*安全提醒：DVWA 為刻意脆弱之系統，請勿對外公開部署。
+<b>*Safety note (安全提醒): 
+<br/>DVWA is intentionally vulnerable; do not deploy on internet-facing hosts. <br/>(DVWA 為刻意脆弱之系統，請勿對外公開部署。)</b>
 
 [Tasks]
 * Baseline Test(基線測試)</b>
