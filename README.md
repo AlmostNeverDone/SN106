@@ -1,6 +1,6 @@
 # DVWA & Flask Server – XSS Attacks Lab
 
-DVWA 與 Flask Server – XSS 攻擊 lab
+DVWA 與 Flask Server – XSS 攻擊 Lab
 
 <h2>Outline 簡介</h2>
 
@@ -47,58 +47,56 @@ This project explores Cross-Site Scripting (XSS) vulnerabilities using DVWA and 
 <h2>Practice 實踐</h2>
 
 <p align="center">
-Task 1: Baseline Test<br/>(基線測試) <br/>
-<img src="https://i.imgur.com/InVX6Db.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<b>Task 1: Inject JavaScript Alert<br/>(注入 JavaScript 警告彈窗)</b><br/>
+<img src="https://i.imgur.com/KzswklJ.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-* Confirms that input directly affects the backend query.(確認輸入內容會直接參與後端查詢)</b>
 <br/>
 <br />
-Task 2: Manipulated Input for Multiple Records<br/>(輸入操控取得多筆紀錄) <br/>
-<img src="https://i.imgur.com/mEu8Dnf.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<b>Task 2: HTML Tag Injection<br/>(注入 HTML 標籤) </b><br/>
+<img src="https://i.imgur.com/6qAyuCc.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-* Indicates lack of input validation. (顯示後端查詢缺乏輸入驗證)</b>
+* The text is displayed with bold and italic formatting (頁面會顯示粗體與斜體文字)<br/>
+* The DVWA reaction means that it fails to properly sanitize inputs and encode outputs, which lets browsers interpret HTML tags directly. <br/>This creates a risk of cross-site scripting (XSS).<br/>(DVWA 的反應意味著它未能正確過濾輸入和編碼輸出，導致瀏覽器直接解釋 HTML 標籤，從而存在跨站腳本 (XSS) 風險)</b>
 <br/>
 <br />
-Task 3: Extract Database Version<br/>(讀取資料庫版本) <br/>
-<img src="https://i.imgur.com/DlyOOx7.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<b>Task 3: Display Session Cookie<br/>(顯示 Session Cookie) </b><br/>
+<img src="https://i.imgur.com/ROB9bQr.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-* Proves that system-level information can be exposed. (證實能以 UNION 技術讀取系統層級資訊)</b>
+* An alert box immediately shows the session cookie, but even if you leave the page and return again, the script will still be valid. <br/>(警告框會立即顯示會話 cookie，但即使離開該頁面並再次返回，腳本仍然有效)</b>
 <br/>
 <br />
-Task 4: Extract Database User<br/>(讀取資料庫使用者) <br/>
-<img src="https://i.imgur.com/q5iRFJz.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<b>Task 4: Reflected XSS with Cookie Script<br/>(反射型 XSS 顯示 Cookie) </b><br/>
+<img src="https://i.imgur.com/PxD35yx.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-* Reveals which account the application uses for DB access. (揭露應用程式連線所使用的 DB 帳號)</b>
+* Inject the same code and try to revisit the page. <br/>(注入相同的程式碼並嘗試重新訪問該頁面)<br/>
+* An alert box immediately shows the session cookie, but if you leave the page and return again, the script will no longer be valid. <br/>(警告框會立即顯示會話 cookie，但若離開該頁面並再次返回，腳本將不再有效)</b>
 <br/>
 <br />
-Task 5: Identify Active Database<br/>(確認當前資料庫) <br/>
-<img src="https://i.imgur.com/dZJcibk.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<b>Task 5: Reflected XSS Simple Alert<br/>(反射型 XSS 簡單彈窗) </b><br/>
+<img src="https://i.imgur.com/3nNb7ui.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-* Helps in structuring further enumeration. (協助後續資料庫結構探索)</b>
 <br/> 
 <br />
-Task 6: Enumerate Table Names<br/>(枚舉表格名稱) <br/>
-<img src="https://i.imgur.com/vlCWr5J.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<b>Task 6: Inject Clickable Link<br/>(注入可點擊的惡意連結)</b><br/>
+<img src="https://i.imgur.com/y9BJW9S.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-* Confirms metadata exposure. (證實中繼資料可被揭露)</b>
+* A link is shown; clicking it triggers an alert “Click!” <br/>(頁面顯示超連結，點擊後觸發 “Click!” 的彈窗)</b>
 <br/>
 <br />
-Task 7: Filter User-Related Tables<br/>(過濾使用者相關表格) <br/>
-<img src="https://i.imgur.com/KwvK4HX.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<b>Task 7: Redirect Victim to External Site<br/>(重導向至外部網站)</b><br/>
+<img src="https://i.imgur.com/VRQCvGD.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-* Pattern search identifies sensitive structures. (透過模式比對鎖定敏感表格)</b>
 <br/>
 <br />
-Task 8: Enumerate Columns<br/>(枚舉欄位) <br/>
-<img src="https://i.imgur.com/rTwtHs4.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<b>Task 8: Start Flask Server<br/>(啟動 Flask 伺服器)</b><br/>
+<img src="https://i.imgur.com/97F78ar.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-* Reveals schema design of target table. (揭露目標表格的欄位設計)</b>
 <br/>
 <br />
-Task 9: Data Exposure Demonstration<br/>(資料洩漏示範) <br/>
-<img src="https://i.imgur.com/XdTuhdB.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<b>Task 9: Perform Persistent XSS<br/>(執行持續型 XSS)</b><br/>
+<img src="https://i.imgur.com/YsRjpfR.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-* Confirms real-world risk of SQL Injection. (證實 SQLi 對敏感資料的實際危害)</b>
+* Inject malicious script into input fields. On subsequent visits, the script executes automatically.<br/>(將惡意腳本注入輸入欄位。後續造訪時，該腳本將自動執行)</b>
 <br/>
 
 <h2>Stored XSS vs Persistent XSS (儲存型與持續型 XSS 差異)</h2>
