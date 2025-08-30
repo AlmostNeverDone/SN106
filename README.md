@@ -103,9 +103,9 @@ Task 9: Data Exposure Demonstration<br/>(資料洩漏示範) <br/>
 
 <h2>Results 成果展示</h2>
 
-Successfully demonstrated how SQL Injection can escalate from retrieving a single record to exposing complete database structures and sensitive user information in DVWA under Low Security settings. The project highlights both the technical risks of insecure coding practices and the importance of systematic defense measures such as input validation and parameterized queries.
+Successfully demonstrated different forms of XSS attacks in both DVWA and a Flask-based web server, progressing from simple alerts to cookie theft and redirection. This project emphasized the real-world risks of insecure input handling and reinforced the importance of secure coding practices in web application development.
 
-本專題成功展示了 SQL 注入在 DVWA 低安全等級下，如何從單筆查詢逐步升級到完整資料庫結構與敏感使用者資料的洩漏。此實作凸顯了不安全編碼的技術風險，以及輸入驗證與參數化查詢等系統性防禦措施的重要性。
+本專題成功展示了在 DVWA 與 Flask 伺服器中進行的多種 XSS 攻擊，從簡單彈窗到竊取 Cookie 與惡意導向，完整體驗了攻擊過程。此實作突顯了輸入處理不當的實際風險，並強化了 Web 應用程式開發中安全編碼的重要性。
 
 
 <h2>Reference 參考</h2>
