@@ -26,6 +26,7 @@ This project explores Cross-Site Scripting (XSS) vulnerabilities using DVWA and 
 * Linux Debian 12 VM with VirtualBox nested VMs (帶有 VirtualBox 嵌套虛擬機的 Linux Debian 12 虛擬機)</b> 
 * UniSQ Student VM Portal (UniSQ 學生用 VM)</b>
 * Damn Vulnerable Web Application [易受攻擊的 Web 應用程式 (DVWA)]</b>
+* Custom Flask server (本地運行的自製 Flask 伺服器)</b>
 
 *Safety note: DVWA is intentionally vulnerable; do not deploy on internet-facing hosts.
 <br/>*安全提醒：DVWA 為刻意脆弱之系統，請勿對外公開部署。
