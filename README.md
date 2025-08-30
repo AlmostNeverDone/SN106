@@ -13,11 +13,11 @@ This project explores Cross-Site Scripting (XSS) vulnerabilities using DVWA and 
 * Practice identifying and exploiting different types of XSS vulnerabilities (Stored, Reflected, Persistent).<br/>
   練習辨識並利用不同類型的 XSS 漏洞(儲存型、反射型、持續型)</b>
 * Understand the impact of executing malicious scripts in a web application.<br/>
-  (理解惡意腳本在 Web 應用程式中執行所帶來的影響)</b> 
+  理解惡意腳本在 Web 應用程式中執行所帶來的影響</b> 
 * Gain hands-on experience using DVWA and a custom Flask-based server as controlled lab environments.<br/>
-  (在可控環境下透過 DVWA 與 Flask 伺服器進行實作訓練)</b> 
+  在可控環境下透過 DVWA 與 Flask 伺服器進行實作訓練</b> 
 * Strengthen awareness of defensive programming and input sanitization techniques.<br/>
-  (強化對防禦性程式設計與輸入驗證技術的認知)</b>
+  強化對防禦性程式設計與輸入驗證技術的認知</b>
 
 
 <h2>Materials and Methods 材料與方法</h2>
